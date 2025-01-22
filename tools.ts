@@ -1,12 +1,12 @@
 //% color="#3c1a13" icon="\uf056"
 //% advanced=true
 //% block="tools" // English
-//% block.loc.zh="工具" // Simplified Chinese
+//% block.loc.zh-cn="工具" // Simplified Chinese
 //% block.loc.zh-tw="工具" // Traditional Chinese
 //% block.loc.de="Werkzeuge" // German
 //% block.loc.fr="outils" // French
 //% block.loc.ja="ツール" // Japanese
-//% block.loc.es="herramientas" // Spanish (Spain)
+//% block.loc.es-es="herramientas" // Spanish (Spain)
 //% block.loc.es-mx="herramientas" // Spanish (Mexico)
 //% block.loc.ru="инструменты" // Russian
 namespace tools {
@@ -55,38 +55,51 @@ namespace tools {
         }
     }
 
-
-
-
-    //              ██╗███████╗ ██████╗ ███╗   ██╗
-    //              ██║██╔════╝██╔═══██╗████╗  ██║
-    //              ██║███████╗██║   ██║██╔██╗ ██║
-    //         ██   ██║╚════██║██║   ██║██║╚██╗██║
-    //         ╚█████╔╝███████║╚██████╔╝██║ ╚████║
-    //          ╚════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝
-
-
-
     //% blockId=json_stringify
-    //% block
+    //% block="JSON.stringify $input" // English
+    //% block.loc.zh-cn="JSON.stringify $input" // Simplified Chinese
+    //% block.loc.zh-tw="JSON.stringify $input" // Traditional Chinese
+    //% block.loc.de="JSON.stringify $input" // German
+    //% block.loc.fr="JSON.stringify $input" // French
+    //% block.loc.ja="JSON.stringify $input" // Japanese
+    //% block.loc.es-es="JSON.stringify $input" // Spanish (Spain)
+    //% block.loc.es-mx="JSON.stringify $input" // Spanish (Mexico)
+    //% block.loc.ru="JSON.stringify $input" // Russian
     //% subcategory="JSON"
-    export function json_stringify(input: any) {
-        return JSON.stringify(input)
+    export function json_stringify(input: any): string {
+        return JSON.stringify(input);
     }
 
     //% blockId=json_parse
-    //% block
+    //% block="JSON.parse $input" // English
+    //% block.loc.zh-cn="JSON.parse $input" // Simplified Chinese
+    //% block.loc.zh-tw="JSON.parse $input" // Traditional Chinese
+    //% block.loc.de="JSON.parse $input" // German
+    //% block.loc.fr="JSON.parse $input" // French
+    //% block.loc.ja="JSON.parse $input" // Japanese
+    //% block.loc.es-es="JSON.parse $input" // Spanish (Spain)
+    //% block.loc.es-mx="JSON.parse $input" // Spanish (Mexico)
+    //% block.loc.ru="JSON.parse $input" // Russian
     //% subcategory="JSON"
-    export function json_parse(input: string) {
-        return JSON.parse(input)
+    export function json_parse(input: string): any {
+        return JSON.parse(input);
     }
 
     //% blockId=json_parseIntRadix
-    //% block
+    //% block="JSON.parseIntRadix $s base $base" // English
+    //% block.loc.zh-cn="JSON.parseIntRadix $s 基数 $base" // Simplified Chinese
+    //% block.loc.zh-tw="JSON.parseIntRadix $s 基數 $base" // Traditional Chinese
+    //% block.loc.de="JSON.parseIntRadix $s Basis $base" // German
+    //% block.loc.fr="JSON.parseIntRadix $s base $base" // French
+    //% block.loc.ja="JSON.parseIntRadix $s 基数 $base" // Japanese
+    //% block.loc.es-es="JSON.parseIntRadix $s base $base" // Spanish (Spain)
+    //% block.loc.es-mx="JSON.parseIntRadix $s base $base" // Spanish (Mexico)
+    //% block.loc.ru="JSON.parseIntRadix $s основание $base" // Russian
     //% subcategory="JSON"
-    export function json_parseIntRadix(s: string, base?: number) {
-        base = base ? base : undefined;
-        return JSON.parseIntRadix(s, base)
+    //% base.defl=10
+    export function json_parseIntRadix(s: string, base?: number): number {
+        base = base ? base : 10;
+        return parseInt(s, base);
     }
 }
 
